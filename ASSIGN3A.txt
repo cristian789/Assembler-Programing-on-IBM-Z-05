@@ -1,0 +1,79 @@
+1                    J E S 2  J O B  L O G  --  S Y S T E M  S 0 W 1  --  N O D E  Z O S K C T R         
+0 
+ 13.11.15 JOB00368 ---- THURSDAY,  20 SEP 2018 ----
+ 13.11.15 JOB00368  IRR010I  USERID KC03I86  IS ASSIGNED TO THIS JOB.
+ 13.11.15 JOB00368  ICH70001I KC03I86  LAST ACCESS AT 13:02:57 ON THURSDAY, SEPTEMBER 20, 2018
+ 13.11.15 JOB00368  $HASP373 KC03I86A STARTED - INIT 1    - CLASS A        - SYS S0W1
+ 13.11.16 JOB00368  -                                         --TIMINGS (MINS.)--            ----PAGING COUNTS---
+ 13.11.16 JOB00368  -JOBNAME  STEPNAME PROCSTEP    RC   EXCP    TCB    SRB  CLOCK   SERV  PG   PAGE   SWAP    VIO SWAPS
+ 13.11.16 JOB00368  -KC03I86A                      00     37 ******    .00     .0     85   0      0      0      0     0
+ 13.11.16 JOB00368  -KC03I86A ENDED.  NAME-CRISTIAN AGUIRRE     TOTAL TCB CPU TIME=   .00  TOTAL ELAPSED TIME=    .0
+ 13.11.16 JOB00368  $HASP395 KC03I86A ENDED
+0------ JES2 JOB STATISTICS ------
+-  20 SEP 2018 JOB EXECUTION DATE
+-           29 CARDS READ
+-           79 SYSOUT PRINT RECORDS
+-            0 SYSOUT PUNCH RECORDS
+-            7 SYSOUT SPOOL KBYTES
+-         0.00 MINUTES EXECUTION TIME
+         1 //KC03I86A  JOB ,'CRISTIAN AGUIRRE' ,MSGCLASS=H                         JOB00368
+         2 //JSTEP01  EXEC PGM=ASSIST                                              00020000
+         3 //STEPLIB  DD DSN=KC00NIU.ASSIST.LOADLIB,DISP=SHR                       00030000
+         4 //SYSPRINT DD SYSOUT=*                                                  00040000
+         5 //SYSIN    DD *                                                         00050000
+ ICH70001I KC03I86  LAST ACCESS AT 13:02:57 ON THURSDAY, SEPTEMBER 20, 2018
+ IEF236I ALLOC. FOR KC03I86A JSTEP01
+ IGD103I SMS ALLOCATED TO DDNAME STEPLIB
+ IEF237I JES2 ALLOCATED TO SYSPRINT
+ IEF237I JES2 ALLOCATED TO SYSIN
+ IEF142I KC03I86A JSTEP01 - STEP WAS EXECUTED - COND CODE 0000
+ IGD104I KC00NIU.ASSIST.LOADLIB                       RETAINED,  DDNAME=STEPLIB 
+ IEF285I   KC03I86.KC03I86A.JOB00368.D0000102.?         SYSOUT        
+ IEF285I   KC03I86.KC03I86A.JOB00368.D0000101.?         SYSIN         
+ IEF373I STEP/JSTEP01 /START 2018263.1311
+ IEF032I STEP/JSTEP01 /STOP  2018263.1311 
+         CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+         VIRT:   584K  SYS:   264K  EXT:        0K  SYS:    11780K
+         ATB- REAL:                    12K  SLOTS:                     0K
+              VIRT- ALLOC:       2M SHRD:       0M
+ IEF375I  JOB/KC03I86A/START 2018263.1311
+ IEF033I  JOB/KC03I86A/STOP  2018263.1311 
+         CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+1*** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT         
+0                                                                                                                                 
+0                                                                                                               PAGE    1         
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                       
+                                       1 ******************************************************************      00060000         
+                                       2 *                                                                *      00070000         
+                                       3 *  ASSIGNMENT 3 - BASIC ASSEMBLER  PROGRAM                       *      00080000         
+                                       4 *                                                                *      00090000         
+                                       5 *  DATE DUE:  09/21/2018                                         *      00100000         
+                                       6 *                                                                *      00110000         
+                                       7 *  NOTE: THIS PROJECT WILL ONLY DO SIMPLE PROGRAMMING STUFF      *      00120000         
+                                       8 *                                                                *      00130000         
+                                       9 ******************************************************************      00140000         
+ 000000                               10 MAIN     CSECT                                                          00150000         
+ 000000                               11          USING MAIN,15   ESTABLISH ADDRESSABILITY ON REGISTER 15        00160000         
+ 000000 5820 F01C            0001C    12          L     2,NUM1    LOAD NUM1 INTO REG 2                           00170007         
+ 000004 5830 F020            00020    13          L     3,NUM2    LOAD NUM2 INTO REG 3                           00180007         
+ 000008 1B23                          14          SR    2,3       SUBTRACTING NUM2 FROM NUM1                     00190009         
+ 00000A 5840 F01C            0001C    15          L     4,NUM1                                                   00191009         
+ 00000E 5850 F020            00020    16          L     5,NUM2                                                   00192009         
+ 000012 1A45                          17          AR    4,5       ADDING NUM1 TO NUM2 W DIFF REGS                00200009         
+ 000014 E160 0000 0000 00000          18          XDUMP ,         DUMP THE REGISTER CONTENTS                     00210006         
+ 00001A 07FE                          19          BR    14        RETURN TO CALLER                               00220006         
+                                      20 *                                                                       00230006         
+ 00001C 0000008E                      21 NUM1     DC    F'142'    DEFINING FULLWORD CONSTANT TO 142              00231008         
+ 000020 00000025                      22 NUM2     DC    F'37'     DEFINING FULLWORD CONSTANT TO 37               00232008         
+                                      23          END   MAIN                                                     00233006         
+0***  NO   STATEMENTS FLAGGED -  NO   WARNINGS,  NO   ERRORS                                                                      
+0*** DYNAMIC CORE AREA USED:  LOW:     948 HIGH:     352 LEAVING:  492268 FREE BYTES. AVERAGE:       54 BYTES/STMT ***            
+0*** ASSEMBLY TIME =    0.000 SECS,    24000 STATEMENTS/SEC ***                                                                   
+0*** PROGRAM EXECUTION BEGINNING - ANY OUTPUT BEFORE EXECUTION TIME MESSAGE IS PRODUCED BY USER PROGRAM ***                       
+0BEGIN XSNAP - CALL     1 AT E000001A USER REGISTERS                                                                              
+0 REGS 0-7      F4F4F4F4    F4F4F4F4    00000069    00000025    000000B3    00000025    F4F4F4F4    F4F4F4F4                      
+  REGS 8-15     F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4    00000028    FFFE7960    00000000                      
+0                                                                                                                                 
+0*** EXECUTION TIME =    0.000 SECS.         8 INSTRUCTIONS EXECUTED -     8000 INSTRUCTIONS/SEC ***                              
+0*** FIRST CARD NOT READ: NO CARDS READ:FILE UNOPENED                                                                             
+0*** AM004 - NORMAL USER TERMINATION BY RETURN ***                                                                                
